@@ -16,7 +16,7 @@ import java.util.List;
 public class OrderController {
     private final OrderService orderService;
 
-    @PostMapping
+    @PostMapping("/create")
     public void createOrder(@RequestBody CreateOrderDto orderDto) {
         orderService.createOrder(orderDto);
     }
@@ -31,12 +31,12 @@ public class OrderController {
         return orderService.getOrder(id);
     }
 
-    @GetMapping
+    @GetMapping("/all")
     public List<OrderDto> getAll() {
         return orderService.getAll();
     }
 
-    @GetMapping
+    @GetMapping("/users")
     public List<OrderDto> getUsersOrders() {
         return orderService.getUserOrders();
     }

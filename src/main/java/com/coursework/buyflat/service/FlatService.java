@@ -25,7 +25,7 @@ public class FlatService {
                 .street(street)
                 .numberFlat(flatDto.getNumberFlat())
                 .area(flatDto.getArea())
-                .room(roomRepo.getByCountRoom(flatDto.getRoom().getCountRooms()))
+                .room(roomRepo.getByCountRooms(flatDto.getRoom().getCountRooms()))
                 .bathroom(bathroomRepo.findByBathroomName(flatDto.getBathroom().getBathroomName()))
                 .build();
         return flatRepo.save(flat);
