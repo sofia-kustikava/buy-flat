@@ -1,7 +1,7 @@
 INSERT INTO Users(id, first_name, middle_name, last_name, phone, email, password, age, type, role)
-VALUES (1, 'Admin' , 'Adminovich','Adminov','803478372' , 'admin@mail.com', '$2a$12$XmFno4d.H65Xo6hdwIiwqepfBjkq9e86HTKnG5LLlF4Z8RPbRIY5K', 34, 'CLIENT', 'USER');
+VALUES (1, 'Admin' , 'Adminovich','Adminov','803478372' , 'admin@mail.com', '$2a$12$LpMv3MUynhPmn6SMH0ta7u.EtMC4k0TmhtMb2t3vcYFEHX.tOQuha', 34, 'REALTOR', 'ADMIN');
 INSERT INTO Users (id, first_name, middle_name, last_name, phone, email, password, age, type, role)
-VALUES (2, 'User' ,'Userovich' , 'Userov','80923783' , 'user@mail.com', '$2a$12$uZZIRrElg9H/gdd3nx/52u8mx2Y5qaGHWVXHWb6LVjNPXDe1d5xdm', 23, 'REALTOR', 'ADMIN');
+VALUES (2, 'User' ,'Userovich' , 'Userov','80923783' , 'user@mail.com', '$2a$12$QAc1uUTub/AEkEUM24OcmuAfCHZuGobq9ZSwQxCIobXtW/pT0W3my', 23, 'CLIENT', 'USER');
 
 INSERT INTO Client(id, users_id, passport) VALUES (1, 2, 'HB2393715');
 

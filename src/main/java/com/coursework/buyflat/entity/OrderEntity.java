@@ -32,6 +32,7 @@ public class OrderEntity {
     @Column(name = "posted_date")
     private LocalDate postedDate;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "status")
     private OrderStatus status;
 

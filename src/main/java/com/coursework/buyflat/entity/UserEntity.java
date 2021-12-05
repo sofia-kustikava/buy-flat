@@ -42,9 +42,11 @@ public class UserEntity implements UserDetails {
     @Column(name = "age")
     private Integer age;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "type")
     private UserType type;
 
+    @Enumerated(EnumType.STRING)
     @Column(name = "role")
     private Role role;
 
