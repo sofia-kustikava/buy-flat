@@ -10,6 +10,7 @@ import com.coursework.buyflat.repo.RealtorRepo;
 import lombok.RequiredArgsConstructor;
 import org.springframework.stereotype.Service;
 
+import java.time.LocalDate;
 import java.util.List;
 
 
@@ -27,10 +28,10 @@ public class OrderService {
         UserEntity user = authenticationService.getUser();
         RealtorEntity realtor = realtorRepo.findByUser(user).orElseThrow(() -> new RuntimeException(""));
         OrderEntity order = OrderEntity.builder()
-                .postedDate(orderDto.getPostedDate())
+                .postedDate(LocalDate.now())
                 .flat(flatService.createFlat(orderDto.getFlat()))
                 .price(orderDto.getPrice())
-                .status(orderDto.getStatus())
+                .status(OrderStatus.ACTIVE)
                 .realtor(realtor)
                 .build();
         orderRepo.save(order);
@@ -55,9 +56,9 @@ public class OrderService {
         return orderMapper.orderToDto(order);
     }
 
-    public List<OrderDto> getUserOrders(){
+    public List<OrderDto> getUserOrders() {
         UserEntity user = authenticationService.getUser();
-        if(user.getType().equals(UserType.REALTOR)) {
+        if (user.getType().equals(UserType.REALTOR)) {
             RealtorEntity realtor = realtorRepo.findByUser(user).orElseThrow(() -> new RuntimeException(""));
             return orderMapper.ordersToDtos(orderRepo.findAllByRealtor(realtor));
         } else {

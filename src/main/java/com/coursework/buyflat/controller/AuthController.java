@@ -2,6 +2,7 @@ package com.coursework.buyflat.controller;
 
 import com.coursework.buyflat.dto.AuthDto;
 import com.coursework.buyflat.dto.TokenDto;
+import com.coursework.buyflat.dto.UserDto;
 import com.coursework.buyflat.service.AuthService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -18,5 +19,10 @@ public class AuthController {
     @PostMapping
     public TokenDto auth(@RequestBody AuthDto authDto) {
         return authService.auth(authDto);
+    }
+
+    @PostMapping("/autologin")
+    public UserDto autoLogin() {
+        return authService.getUser();
     }
 }

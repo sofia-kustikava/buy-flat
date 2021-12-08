@@ -4,6 +4,7 @@ import com.coursework.buyflat.dto.StreetDto;
 import com.coursework.buyflat.service.StreetService;
 import lombok.RequiredArgsConstructor;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
@@ -18,5 +19,10 @@ public class StreetController {
     @GetMapping
     public List<StreetDto> getStreet() {
         return streetService.getAll();
+    }
+
+    @GetMapping("/{regionId}")
+    public List<StreetDto> getStreet(@PathVariable("regionId") Long id) {
+        return streetService.getByRegionId(id);
     }
 }

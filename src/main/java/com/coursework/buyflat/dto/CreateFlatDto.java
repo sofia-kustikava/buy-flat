@@ -10,12 +10,10 @@ import lombok.Setter;
 @NoArgsConstructor
 @AllArgsConstructor
 public class CreateFlatDto {
-    private Long flatId;
     private StreetDto street;
-    private CityDto cityDto;
+    private CityDto city;
     private BathroomDto bathroom;
     private RoomDto room;
     private String numberFlat;
     private Double area;
-    private RealtorDto realtor;
 }

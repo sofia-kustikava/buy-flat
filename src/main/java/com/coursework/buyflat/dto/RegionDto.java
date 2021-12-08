@@ -10,6 +10,7 @@ import lombok.Setter;
 @AllArgsConstructor
 @NoArgsConstructor
 public class RegionDto {
+    private Long id;
     private String regionName;
     private CityDto city;
 }

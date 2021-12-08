@@ -1,0 +1,17 @@
+<div *ngFor="let order of orders">
+  <div class="order">
+    <div>{{order.id}}<br></div>
+    <div>{{order.realtor.percent}}<br></div>
+    <div>{{order.flat.street.streetName}}<br></div>
+    <div>{{order.flat.street.region.regionName}}<br></div>
+    <div>{{order.flat.street.region.city.cityName}}<br></div>
+    <div>{{order.flat.bathroom.bathroomName}}<br></div>
+    <div>{{order.flat.room.countRooms}}<br></div>
+    <div>{{order.flat.numberFlat}}<br></div>
+    <div>{{order.flat.area}}<br></div>
+    <div>{{order.postedDate}}<br></div>
+    <div>{{order.status}}<br></div>
+    <div>{{order.price}}<br></div>
+    <br>
+  </div>
+</div>

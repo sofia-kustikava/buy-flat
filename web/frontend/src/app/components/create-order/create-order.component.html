@@ -1,0 +1,36 @@
+<label>
+  <input type="text" placeholder="numberFlat" [(ngModel)]="createFlat.numberFlat" name="numberFlat" required=""/>
+</label>
+<label>
+  <input type="text" placeholder="area" [(ngModel)]="createFlat.area" name="area" required=""/>
+</label>
+<label>
+  <input type="text" placeholder="price" [(ngModel)]="createOrder.price" name="area" required=""/>
+</label>
+<div>
+  <ul>
+    <li *ngFor="let room of rooms" (click)="setRoom(room)">{{room.countRooms}}</li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let bathroom of bathrooms" (click)="setBathroom(bathroom)">{{bathroom.bathroomName}}</li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let city of cities" (click)="setCity(city)">{{city.cityName}}</li>
+  </ul>
+</div>
+<div>
+  <ul>
+    <li *ngFor="let region of regions" (click)="setRegion(region)">{{region.regionName}}</li>
+  </ul>
+</div>
+
+  <div>
+    <ul>
+      <li *ngFor="let street of streets" (click)="setStreet(street)">{{street.streetName}}</li>
+    </ul>
+  </div>
+<div (click)="create()">CREATE</div>

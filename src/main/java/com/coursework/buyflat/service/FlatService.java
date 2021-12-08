@@ -10,18 +10,13 @@ import org.springframework.stereotype.Service;
 @RequiredArgsConstructor
 public class FlatService {
     private final RoomRepo roomRepo;
-    private final RegionRepo regionRepo;
     private final StreetRepo streetRepo;
     private final FlatRepo flatRepo;
-    private final CityRepo cityRepo;
     private final BathroomRepo bathroomRepo;
 
     public FlatEntity createFlat(CreateFlatDto flatDto) {
-        CityEntity city = cityRepo.findByCityName(flatDto.getCityDto().getCityName()).orElseThrow(() -> new RuntimeException());
-        RegionEntity region = regionRepo.findByCity(city).orElseThrow(() -> new RuntimeException());
-        StreetEntity street = streetRepo.findByRegion(region).orElseThrow(() -> new RuntimeException());
+        StreetEntity street = streetRepo.findById(flatDto.getStreet().getId()).orElseThrow(() -> new RuntimeException());
         FlatEntity flat = FlatEntity.builder()
-                .id(flatDto.getFlatId())
                 .street(street)
                 .numberFlat(flatDto.getNumberFlat())
                 .area(flatDto.getArea())
